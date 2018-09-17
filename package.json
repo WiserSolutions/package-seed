@@ -1,0 +1,62 @@
+{
+  "name": "package-seed",
+  "version": "0.0.0",
+  "description": "Default setup for a JavaScript library package",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WiserSolutions/package-seed"
+  },
+  "author": "Jan Konopásek",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.js\" --loglevel warn",
+    "lint": "eslint -f @wisersolutions/eslint-formatter-idea ./src",
+    "test": "jest 'src/'",
+    "clean": "rm -rf es lib",
+    "build:assets": "cd src && rsync -r --exclude '**/*.js' * ../${NODE_ENV} && cd ..",
+    "build:js": "babel -d ${NODE_ENV} --ignore '*.test.js' ./src",
+    "build:all": "npm run build:assets && npm run build:js",
+    "build": "NODE_ENV=es npm run build:all && NODE_ENV=lib npm run build:all",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@wisersolutions/eslint-config": "^1.0.3",
+    "@wisersolutions/eslint-formatter-idea": "^1.0.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.6.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.2",
+    "streamtest": "^1.2.4"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0",
+    "ncp": "^2.0.0"
+  }
+}
