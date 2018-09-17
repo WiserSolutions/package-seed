@@ -1,5 +1,5 @@
 {
-  "name": "package-seed",
+  "name": "@wisersolutions/package-seed",
   "version": "0.0.1",
   "description": "Default setup for a JavaScript library package",
   "main": "./lib/index.js",
