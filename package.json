@@ -4,6 +4,7 @@
   "description": "Default setup for a JavaScript library package",
   "main": "./lib/index.js",
   "module": "./es/index.js",
+  "bin": "./lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WiserSolutions/package-seed"

@@ -12,7 +12,8 @@ npx @wisersolutions/package-seed
 ```
 
 This will copy all sources from the seed package to your folder and replace all mentions of
-`package-seed` with the name of your folder.
+`package-seed` with the name of your folder. Note that various parts will need clean-up, e.g.
+this part of README or the `author` and `bin` keys in `package.json`.
 
 ## Development
 
