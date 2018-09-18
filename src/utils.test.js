@@ -1,6 +1,6 @@
 import { v2 } from 'streamtest'
 
-import { getGitIgnoreItems, ReplaceStream } from './utils'
+import { ReplaceStream } from './utils'
 
 const { fromChunks, toText } = v2
 
@@ -16,13 +16,5 @@ describe('ReplaceStream', () => {
           done()
         })
       )
-  })
-})
-
-describe('getGitIgnoreItems', () => {
-  it('retrieves meaningful lines from .gitignore (not comments or empty lines)', () => {
-    const items = getGitIgnoreItems('.')
-    expect(items).toContain('node_modules')
-    expect(items).not.toContain('')
   })
 })

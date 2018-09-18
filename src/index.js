@@ -4,13 +4,13 @@
 import { ncp } from 'ncp'
 import { resolve, join, basename } from 'path'
 
-import { ReplaceStream, getGitIgnoreItems } from './utils'
+import { ReplaceStream } from './utils'
 
 const seedRoot = resolve(__dirname, '../')
 const cwd = resolve('./')
 const packageName = basename(cwd)
 
-const ignore = new RegExp('^' + ['.git', ...getGitIgnoreItems(seedRoot)].map(dir => join(seedRoot, dir)).join('|'))
+const ignore = new RegExp('^' + ['es', 'lib'].map(dir => join(seedRoot, dir)).join('|'))
 
 console.log(`Copying package-seed contents from ${seedRoot} to ${cwd}`)
 ncp(
