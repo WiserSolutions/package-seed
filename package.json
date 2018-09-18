@@ -27,7 +27,7 @@
     "test": "jest 'src/'",
     "clean": "rm -rf es lib",
     "build:assets": "cd src && rsync -r --exclude '**/*.js' * ../${NODE_ENV} && cd ..",
-    "build:js": "babel -d ${NODE_ENV} --ignore '*.test.js' ./src",
+    "build:js": "babel -d ${NODE_ENV} --ignore '**/*.test.js' ./src",
     "build:all": "npm run build:assets && npm run build:js",
     "build": "NODE_ENV=es npm run build:all && NODE_ENV=lib npm run build:all",
     "prepublishOnly": "npm run clean && npm run build"
