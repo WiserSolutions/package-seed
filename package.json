@@ -2,15 +2,25 @@
   "name": "@wisersolutions/package-seed",
   "version": "0.0.4",
   "description": "Default setup for a JavaScript library package",
-  "main": "./lib/index.js",
-  "module": "./es/index.js",
-  "bin": "./lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WiserSolutions/package-seed"
   },
   "author": "Jan Konopásek",
   "license": "MIT",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "bin": "./lib/index.js",
+  "files": [
+    "/es",
+    "/lib",
+    "/src",
+    ".babelrc",
+    ".eslintrc",
+    ".gitignore",
+    ".prettierrc",
+    "jest.config.js"
+  ],
   "scripts": {
     "format": "prettier --write \"src/**/*.js\" --loglevel warn",
     "lint": "eslint -f @wisersolutions/eslint-formatter-idea ./src",
