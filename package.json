@@ -1,6 +1,6 @@
 {
   "name": "@wisersolutions/package-seed",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Default setup for a JavaScript library package",
   "main": "./lib/index.js",
   "module": "./es/index.js",
