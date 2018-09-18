@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /* eslint-disable no-console */
 import { ncp } from 'ncp'
 import { resolve, join, basename } from 'path'
