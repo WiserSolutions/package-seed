@@ -11,9 +11,11 @@ Run the following from that folder:
 npx @wisersolutions/package-seed
 ```
 
-This will copy all sources from the seed package to your folder and replace all mentions of
-`package-seed` with the name of your folder. Note that various parts will need clean-up, e.g.
-this part of README or the `author`, `bin`, and (most importantly) `files` keys in `package.json`.
+This will seed the new package with the default setup. Note that the package description needs
+to be added manually.
+
+_Note: The seed data expects the package to be hosted under the `WiserSolutions` GitHub organization.
+If that's not the case, make sure to replace all instances of that label in the seeded sources._
 
 ## Development
 
