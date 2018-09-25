@@ -2,26 +2,23 @@
 
 /* eslint-disable no-console */
 import { ncp } from 'ncp'
-import { resolve, join, basename } from 'path'
+import { resolve, basename } from 'path'
 
 import { ReplaceStream } from './utils'
 
-const seedRoot = resolve(__dirname, '../')
+const seedRoot = resolve(__dirname, '../seed')
 const cwd = resolve('./')
 const packageName = basename(cwd)
-
-const ignore = new RegExp('^' + ['es', 'lib'].map(dir => join(seedRoot, dir)).join('|'))
 
 console.log(`Copying package-seed contents from ${seedRoot} to ${cwd}`)
 ncp(
   seedRoot,
   cwd,
   {
-    filter: path => !ignore.test(path),
-    transform: (read, write) => read.pipe(new ReplaceStream(/package-seed/g, packageName)).pipe(write)
+    transform: (read, write) => read.pipe(new ReplaceStream(/<PACKAGE_NAME>/g, packageName)).pipe(write)
   },
   err => {
     if (err) return console.error(err)
-    console.log('Package seed copied. Update your dependencies, README, and code :)')
+    console.log('Package seeded. Don\'t forget to add description and usage docs.')
   }
 )
