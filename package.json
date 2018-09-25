@@ -12,9 +12,9 @@
   "module": "./es/index.js",
   "bin": "./lib/index.js",
   "files": [
-    "/es",
-    "/lib",
-    "/seed"
+    "es",
+    "lib",
+    "seed"
   ],
   "scripts": {
     "format": "prettier --write \"src/**/*.js\" --loglevel warn",

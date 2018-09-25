@@ -3,6 +3,7 @@
 /* eslint-disable no-console */
 import { ncp } from 'ncp'
 import { resolve, basename } from 'path'
+import { renameSync } from 'fs'
 
 import { ReplaceStream } from './utils'
 
@@ -19,6 +20,11 @@ ncp(
   },
   err => {
     if (err) return console.error(err)
+
+    // seed `package.json` can't be stored under that name, because it messes with NPM publish
+    // so it's stored as `package-seed.json` and renamed only when in place
+    renameSync(resolve(cwd, 'package-seed.json'), resolve(cwd, 'package.json'))
+
     console.log('Package seeded. Don\'t forget to add description and usage docs.')
   }
 )
