@@ -11,6 +11,8 @@ const seedRoot = resolve(__dirname, '../seed')
 const cwd = resolve('./')
 const packageName = basename(cwd)
 
+const renameSeedFile = name => renameSync(resolve(cwd, `${name}.seed`), resolve(cwd, name))
+
 console.log(`Copying package-seed contents from ${seedRoot} to ${cwd}`)
 ncp(
   seedRoot,
@@ -21,9 +23,10 @@ ncp(
   err => {
     if (err) return console.error(err)
 
-    // seed `package.json` can't be stored under that name, because it messes with NPM publish
-    // so it's stored as `package-seed.json` and renamed only when in place
-    renameSync(resolve(cwd, 'package-seed.json'), resolve(cwd, 'package.json'))
+    // seed `package.json` and `.gitignore` can't be stored under those names, because it messes with NPM publish
+    // so they're stored as `<NAME>.seed` and renamed only when in place
+    renameSeedFile('package.json')
+    renameSeedFile('.gitignore')
 
     console.log('Package seeded. Don\'t forget to add description and usage docs.')
   }
