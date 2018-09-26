@@ -1,6 +1,6 @@
 {
   "name": "@wisersolutions/package-seed",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Default setup for a JavaScript library package",
   "repository": {
     "type": "git",
