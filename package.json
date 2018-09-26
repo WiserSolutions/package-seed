@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
+    "core-js": "^2.5.7",
     "ncp": "^2.0.0"
   }
 }
