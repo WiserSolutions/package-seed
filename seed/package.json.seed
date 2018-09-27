@@ -1,7 +1,7 @@
 {
   "name": "@wisersolutions/<PACKAGE_NAME>",
   "version": "0.0.0",
-  "description": "Add a description...",
+  "description": "<PACKAGE_DESCRIPTION>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WiserSolutions/<PACKAGE_NAME>"

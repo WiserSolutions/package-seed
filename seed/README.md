@@ -1,11 +1,11 @@
 # <PACKAGE_NAME>
 
-Add a description...
+<PACKAGE_DESCRIPTION>
 
 ## Use
 
 Add a usage guide...
-Also, don't forget to replace `WiserSolutions` with `WisePricer` if the package is still hosted under that org.
+Also, don't forget to replace `WiserSolutions` if the package is owned by a different organization.
 
 ## Development
 

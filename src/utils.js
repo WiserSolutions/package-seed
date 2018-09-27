@@ -1,12 +1,16 @@
 import { Transform } from 'stream'
 
 export class ReplaceStream extends Transform {
-  constructor(pattern, replacement) {
+  constructor(transforms) {
     super()
-    Object.assign(this, { pattern, replacement })
+    Object.assign(this, { transforms })
   }
   _transform(chunk, encoding, callback) {
-    this.push(Buffer.from(chunk.toString().replace(this.pattern, this.replacement)))
+    const transformed = this.transforms.reduce(
+      (acc, [pattern, replacement]) => acc.replace(pattern, replacement),
+      chunk.toString()
+    )
+    this.push(Buffer.from(transformed))
     callback()
   }
 }
