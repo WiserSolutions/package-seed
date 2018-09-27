@@ -45,6 +45,6 @@ ncp(
     renameSeedFile('package.json')
     renameSeedFile('.gitignore')
 
-    log(`${green('√ Done.')} Package seeded. Don't forget to add${description ? ' description and' : ''} usage docs.`)
+    log(`${green('√ Done.')} Package seeded. Don't forget to add${description ? '' : ' description and'} usage docs.`)
   }
 )
