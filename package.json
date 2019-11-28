@@ -24,22 +24,22 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@wisersolutions/eslint-config": "^1.0.5",
-    "@wisersolutions/eslint-formatter-idea": "^1.0.4",
-    "@wisersolutions/transpile-js": "^0.0.12",
-    "babel-eslint": "^10.0.2",
-    "babel-jest": "^24.8.0",
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-react": "^7.14.3",
-    "jest": "^24.8.0",
-    "prettier": "^1.18.2",
+    "@wisersolutions/eslint-config": "^2.0.1",
+    "@wisersolutions/eslint-formatter-idea": "^1.0.5",
+    "@wisersolutions/transpile-js": "^0.0.17",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.7.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-jest": "^23.0.5",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
     "streamtest": "^1.2.4"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.5.5",
-    "chalk": "^2.4.2",
-    "core-js": "^3.1.4",
+    "@babel/runtime-corejs3": "^7.7.4",
+    "chalk": "^3.0.0",
+    "core-js": "^3.4.5",
     "minimist": "^1.2.0",
     "ncp": "^2.0.0"
   }

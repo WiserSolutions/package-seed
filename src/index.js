@@ -23,7 +23,10 @@ const log = (...args) => console.log(white.dim('package-seed:'), ...args) // esl
 const renameSeedFile = name => renameSync(resolve(cwd, `${name}.seed`), resolve(cwd, name))
 
 log(`Copying package-seed contents from ${path(seedRoot)} to ${path(cwd)}`)
-const transforms = [[/<PACKAGE_NAME>/g, packageName], [/<PACKAGE_DESCRIPTION>/g, description || 'Add a description...']]
+const transforms = [
+  [/<PACKAGE_NAME>/g, packageName],
+  [/<PACKAGE_DESCRIPTION>/g, description || 'Add a description...']
+]
 ncp(
   seedRoot,
   cwd,
