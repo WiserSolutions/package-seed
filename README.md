@@ -11,8 +11,8 @@ Run the following from that folder:
 npx @wisersolutions/package-seed
 ```
 
-This will seed the new package with the default setup. Note that the package description needs
-to be added manually.
+This will seed the new package with the default setup. Package description should either be added
+manually or using the `-d` command-line option.
 
 _Note: The seed data expects the package to be hosted under the `WiserSolutions` GitHub organization.
 If that's not the case, make sure to replace all instances of that label in the seeded sources._
